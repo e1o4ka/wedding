@@ -1280,62 +1280,49 @@ footer p {
     }
 }
 /* ============================================
-   ЕДИНЫЙ РАЗМЕР ТЕКСТА НА ТЕЛЕФОНЕ
+   ПРИНУДИТЕЛЬНЫЙ РАЗМЕР ТЕКСТА НА ТЕЛЕФОНЕ
 ============================================ */
+
+/* === ПЛАНШЕТЫ (до 768px) === */
 @media (max-width: 768px) {
-    /* Intro (Наша история) */
-    .intro p {
-        font-size: 20px;
-        padding: 0 10px;
-    }
-    .intro h2 {
-        font-size: 32px;
+    .intro p,
+    .side-text p,
+    .single-photo-text,
+    .relationship-text {
+        font-size: 20px !important;
+        line-height: 1.8 !important;
     }
 
-    /* Детство, Школа, Юношество */
-    .side-text p {
-        font-size: 20px !important;
-        padding: 0 5px;
-    }
-    .side-text h2 {
+    .intro h2,
+    .side-text h2,
+    .single-photo-section h2,
+    .relationship-content h2 {
         font-size: 32px !important;
     }
 
-    /* Первая встреча + Предложение */
-    .single-photo-text {
-        font-size: 20px !important;
-        padding: 0 10px;
-    }
-    .single-photo-section h2 {
-        font-size: 32px !important;
-    }
     .single-photo-section .big-word {
-        font-size: 60px;
+        font-size: 60px !important;
     }
 }
 
+/* === ТЕЛЕФОНЫ (до 500px) === */
 @media (max-width: 500px) {
-    .intro p {
-        font-size: 18px;
-    }
-    .intro h2 {
-        font-size: 26px;
+    .intro p,
+    .side-text p,
+    .single-photo-text,
+    .relationship-text {
+        font-size: 18px !important;
+        line-height: 1.8 !important;
     }
 
-    .side-text p {
-        font-size: 18px !important;
-    }
-    .side-text h2 {
+    .intro h2,
+    .side-text h2,
+    .single-photo-section h2,
+    .relationship-content h2 {
         font-size: 26px !important;
     }
 
-    .single-photo-text {
-        font-size: 18px !important;
-    }
-    .single-photo-section h2 {
-        font-size: 26px !important;
-    }
     .single-photo-section .big-word {
-        font-size: 50px;
+        font-size: 50px !important;
     }
 }
