@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // =========================
-// MUSIC PLAYER (автозапуск при открытии конверта)
+// MUSIC PLAYER (запуск при клике на конверт)
 // =========================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -142,10 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const audio = document.getElementById('bgMusic');
     const envelope = document.getElementById('envelope');
     let isPlaying = false;
-    let hasStarted = false; // чтобы музыка запускалась только 1 раз
+    let hasStarted = false;
 
-    if (musicBtn && audio) {
-        // Устанавливаем громкость 30%
+    if (musicBtn && audio && envelope) {
+        // Громкость 30%
         audio.volume = 0.3;
 
         // Бесконечное повторение
@@ -154,23 +154,24 @@ document.addEventListener('DOMContentLoaded', function() {
             audio.play();
         });
 
-        // ===== АВТОЗАПУСК ПРИ ОТКРЫТИИ КОНВЕРТА =====
-        if (envelope) {
-            const observer = new MutationObserver(function() {
-                if (envelope.classList.contains('open') && !hasStarted) {
-                    audio.play().catch(() => {});
-                    musicBtn.textContent = '⏸';
-                    musicBtn.style.background = '#b99868';
-                    musicBtn.style.color = '#fff';
-                    isPlaying = true;
-                    hasStarted = true;
-                }
-            });
-            observer.observe(envelope, { attributes: true, attributeFilter: ['class'] });
-        }
+        // ===== ЗАПУСК ПРИ КЛИКЕ НА КОНВЕРТ =====
+        envelope.addEventListener('click', function startMusic() {
+            if (!hasStarted) {
+                audio.play().catch(() => {});
+                musicBtn.textContent = '⏸';
+                musicBtn.style.background = '#b99868';
+                musicBtn.style.color = '#fff';
+                isPlaying = true;
+                hasStarted = true;
+                // Убираем слушатель, чтобы не дублировалось
+                envelope.removeEventListener('click', startMusic);
+            }
+        });
 
         // ===== КНОПКА ДЛЯ УПРАВЛЕНИЯ =====
-        musicBtn.addEventListener('click', function() {
+        musicBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
             if (isPlaying) {
                 audio.pause();
                 musicBtn.textContent = '♫';
