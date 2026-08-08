@@ -443,26 +443,6 @@ p {
     font-size: 20px;
 }
 
-@media (max-width: 900px) {
-    .side-photos {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    .side-photos.reverse .left-photo,
-    .side-photos.reverse .right-photo {
-        order: unset;
-    }
-    .side-photos.reverse .side-text {
-        order: unset;
-    }
-    .side-photo .photo-placeholder {
-        height: 250px;
-    }
-    .side-text h2 {
-        font-size: 32px;
-    }
-}
-
 .single-photo-section {
     text-align: center;
     max-width: 700px;
@@ -530,19 +510,6 @@ p {
     line-height: 1.8;
     max-width: 600px;
     margin: 10px auto 0;
-}
-
-@media (max-width: 600px) {
-    .single-photo-frame .photo-placeholder {
-        height: 280px;
-        font-size: 18px;
-    }
-    .single-photo-section h2 {
-        font-size: 32px;
-    }
-    .single-photo-section .big-word {
-        font-size: 60px;
-    }
 }
 
 .youth {
@@ -959,7 +926,7 @@ footer p {
 }
 
 /* ============================================
-   МОБИЛЬНАЯ ВЕРСИЯ (все фото одного размера)
+   МОБИЛЬНАЯ ВЕРСИЯ
 ============================================ */
 @media (max-width: 900px) {
 
@@ -1011,7 +978,7 @@ footer p {
         max-width: 380px;
         height: 400px;
         border-radius: 20px;
-        background: #fcfaf8;
+        background: rgba(248, 244, 238, 0.4);
         border: 2px dashed #d7c9b8;
         display: flex;
         justify-content: center;
@@ -1023,9 +990,9 @@ footer p {
     .side-photo .photo-placeholder img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         display: block;
-        background: #fcfaf8;
+        background: transparent;
     }
 
     .photo-label {
@@ -1034,14 +1001,26 @@ footer p {
         letter-spacing: 2px;
     }
 
-    .side-text h2 {
-        font-size: 30px;
-        margin-bottom: 12px;
+    .single-photo-frame .photo-placeholder {
+        width: 100%;
+        max-width: 380px;
+        height: 400px;
+        margin: 0 auto;
+        border-radius: 24px;
+        background: rgba(248, 244, 238, 0.4);
+        border: 2px dashed #d7c9b8;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .side-text p {
-        font-size: 18px;
-        line-height: 1.6;
+    .single-photo-frame .photo-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        background: transparent;
     }
 }
 
@@ -1056,241 +1035,23 @@ footer p {
         border-radius: 16px;
     }
 
-    .side-text h2 {
-        font-size: 24px;
-    }
-
-    .side-text p {
-        font-size: 16px;
-    }
-
-    .photo-label {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 900px) {
-    .single-photo-frame .photo-placeholder {
-        width: 100%;
-        max-width: 380px;
-        height: 400px;
-        margin: 0 auto;
-        border-radius: 24px;
-        background: #fcfaf8;
-        border: 2px dashed #d7c9b8;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .single-photo-frame .photo-placeholder img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        background: #fcfaf8;
-    }
-}
-
-@media (max-width: 600px) {
     .single-photo-frame .photo-placeholder {
         max-width: 320px;
         height: 340px;
     }
 }
-
-/* ===== ФОТО ВНУТРИ РАМОК (общие стили) ===== */
-.photo-placeholder img,
-.single-photo-frame .photo-placeholder img {
-    transition: 0.3s;
-}
-
-/* ===== ПЛАВНАЯ ПОДСТРОЙКА ФОТО ===== */
-.photo-placeholder img,
-.single-photo-frame .photo-placeholder img {
-    transition: 0.3s;
-}
-
 /* ============================================
-   ОТНОШЕНИЯ (3 фото подряд на ПК, друг под другом на телефоне)
-============================================ */
-.relationship {
-    background: transparent;
-    text-align: center;
-}
-
-.relationship-content .section-subtitle {
-    display: block;
-    margin-bottom: 12px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: #b99868;
-    font-size: 13px;
-}
-
-.relationship-content h2 {
-    font-size: 44px;
-    margin-bottom: 40px;
-}
-
-.relationship-photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 950px;
-    margin: 0 auto 35px;
-}
-
-.rel-photo {
-    width: 100%;
-}
-
-.rel-photo-placeholder {
-    width: 100%;
-    height: 340px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 2px dashed #d7c9b8;
-    background: rgba(248, 244, 238, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-}
-
-.rel-photo-placeholder:hover {
-    border-color: #b99868;
-}
-
-.rel-photo-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.relationship-text {
-    max-width: 700px;
-    margin: 10px auto 0;
-    font-size: 20px;
-    color: #7d6c5d;
-    line-height: 1.8;
-}
-
-/* ===== МОБИЛЬНАЯ ВЕРСИЯ (фото друг под другом) ===== */
-@media (max-width: 768px) {
-    .relationship-photos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 0 10px;
-        max-width: 100%;
-    }
-
-    .rel-photo {
-        width: 100%;
-        max-width: 380px;
-    }
-
-    .rel-photo-placeholder {
-        height: 400px;
-        border-radius: 20px;
-    }
-
-    .relationship-content h2 {
-        font-size: 32px;
-    }
-
-    .relationship-text {
-        font-size: 17px;
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 500px) {
-    .rel-photo {
-        max-width: 320px;
-    }
-
-    .rel-photo-placeholder {
-        height: 340px;
-        border-radius: 16px;
-    }
-
-    .relationship-content h2 {
-        font-size: 26px;
-    }
-
-    .relationship-text {
-        font-size: 15px;
-    }
-}
-/* ===== МОБИЛЬНАЯ ВЕРСИЯ (фото друг под другом, крупный текст) ===== */
-@media (max-width: 768px) {
-    .relationship-photos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 0 10px;
-        max-width: 100%;
-    }
-
-    .rel-photo {
-        width: 100%;
-        max-width: 380px;
-    }
-
-    .rel-photo-placeholder {
-        height: 400px;
-        border-radius: 20px;
-    }
-
-    .relationship-content h2 {
-        font-size: 32px;
-    }
-
-    .relationship-text {
-        font-size: 20px;         /* ← было 17px, стало как в других блоках */
-        line-height: 1.8;
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 500px) {
-    .rel-photo {
-        max-width: 320px;
-    }
-
-    .rel-photo-placeholder {
-        height: 340px;
-        border-radius: 16px;
-    }
-
-    .relationship-content h2 {
-        font-size: 26px;
-    }
-
-    .relationship-text {
-        font-size: 18px;         /* ← было 15px, стало крупнее */
-        line-height: 1.8;
-        padding: 0 10px;
-    }
-}
-/* ============================================
-   ПРИНУДИТЕЛЬНЫЙ РАЗМЕР ТЕКСТА НА ТЕЛЕФОНЕ
+   ВСЕ ТЕКСТЫ ОДИНАКОВОГО РАЗМЕРА НА ТЕЛЕФОНЕ
 ============================================ */
 
-/* === ПЛАНШЕТЫ (до 768px) === */
+/* ПЛАНШЕТЫ (до 768px) */
 @media (max-width: 768px) {
     .intro p,
     .side-text p,
     .single-photo-text,
     .relationship-text {
         font-size: 20px !important;
-        line-height: 1.8 !important;
+        line-height: 1.7 !important;
     }
 
     .intro h2,
@@ -1298,6 +1059,7 @@ footer p {
     .single-photo-section h2,
     .relationship-content h2 {
         font-size: 32px !important;
+        line-height: 1.3 !important;
     }
 
     .single-photo-section .big-word {
@@ -1305,14 +1067,14 @@ footer p {
     }
 }
 
-/* === ТЕЛЕФОНЫ (до 500px) === */
+/* ТЕЛЕФОНЫ (до 500px) */
 @media (max-width: 500px) {
     .intro p,
     .side-text p,
     .single-photo-text,
     .relationship-text {
         font-size: 18px !important;
-        line-height: 1.8 !important;
+        line-height: 1.7 !important;
     }
 
     .intro h2,
@@ -1320,9 +1082,16 @@ footer p {
     .single-photo-section h2,
     .relationship-content h2 {
         font-size: 26px !important;
+        line-height: 1.3 !important;
     }
 
     .single-photo-section .big-word {
         font-size: 50px !important;
     }
+}
+
+/* ===== ФОТО ВНУТРИ РАМОК ===== */
+.photo-placeholder img,
+.single-photo-frame .photo-placeholder img {
+    transition: 0.3s;
 }
