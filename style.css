@@ -1335,3 +1335,85 @@ footer p {
     .rel-photo {
         max-width: 320px;
     }
+/* ===== ПОСЛЕДНИЙ РАБОЧИЙ БЛОК (НЕ УДАЛЯТЬ) ===== */
+
+/* Все фото в рамках - запрещаем выход за границы */
+.photo-placeholder img,
+.single-photo-frame .photo-placeholder img,
+.rel-photo-placeholder img,
+.map-image-placeholder img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Все рамки - запрещаем расползаться */
+.photo-placeholder,
+.single-photo-frame .photo-placeholder,
+.rel-photo-placeholder,
+.map-image-placeholder {
+    overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: rgba(248, 244, 238, 0.4) !important;
+}
+
+/* Мобильные устройства */
+@media (max-width: 700px) {
+    .photo-placeholder,
+    .single-photo-frame .photo-placeholder,
+    .rel-photo-placeholder {
+        max-width: 320px !important;
+        height: 320px !important;
+        margin: 0 auto !important;
+    }
+
+    .map-image-placeholder {
+        max-width: 320px !important;
+        height: 180px !important;
+        margin: 0 auto !important;
+    }
+
+    .side-photos .left-photo,
+    .side-photos .right-photo,
+    .rel-photo {
+        max-width: 320px !important;
+        margin: 0 auto !important;
+    }
+
+    .side-photos .photo-frame {
+        padding: 0 !important;
+    }
+
+    .side-photos {
+        gap: 15px !important;
+    }
+}
+
+/* Планшеты и большие телефоны */
+@media (min-width: 701px) and (max-width: 900px) {
+    .photo-placeholder,
+    .single-photo-frame .photo-placeholder,
+    .rel-photo-placeholder {
+        max-width: 380px !important;
+        height: 380px !important;
+        margin: 0 auto !important;
+    }
+
+    .map-image-placeholder {
+        max-width: 380px !important;
+        height: 220px !important;
+        margin: 0 auto !important;
+    }
+
+    .side-photos .left-photo,
+    .side-photos .right-photo,
+    .rel-photo {
+        max-width: 380px !important;
+        margin: 0 auto !important;
+    }
+}
