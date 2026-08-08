@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ===== LOADER ===== -->
+<div class="loader">
+    <div class="loader-text">Loading...</div>
+</div>
+
+<!-- ===== MUSIC ===== -->
+<div class="music-btn" id="musicBtn" aria-label="Включить/выключить музыку">♫</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="hero-top">Wedding Invitation</span>
+        <h1>Мы рады пригласить вас<br>на самый важный день<br>в нашей жизни</h1>
+        <p>Откройте конверт, чтобы начать историю</p>
+    </div>
+</section>
+
+<!-- ===== КОНВЕРТ ===== -->
+<section class="envelope-section">
+    <div class="envelope" id="envelope">
+        <div class="envelope-base"></div>
+        <div class="envelope-letter" id="envelopeLetter">
+            <span class="letter-top">Wedding Invitation</span>
+            <h2>Дорогие гости</h2>
+            <p>Нам очень хочется, чтобы именно вы разделили этот день вместе с нами.</p>
+            <button class="btn-open-letter" id="openBtn" style="display:none;">Открыть приглашение</button>
+        </div>
+        <div class="envelope-left"></div>
+        <div class="envelope-right"></div>
+        <div class="envelope-bottom"></div>
+    </div>
+</section>
+
+<!-- ===== НАША ИСТОРИЯ ===== -->
+<section class="intro">
+    <div class="container">
+        <span class="section-subtitle">Наша история</span>
+        <h2>Каждая история любви начинается намного раньше первой встречи...</h2>
+        <p>Когда-то мы были детьми. Учились мечтать. Смеялись. Росли. Даже не подозревая, что однажды судьба соединит наши жизни.</p>
+    </div>
+</section>
+
+<!-- ===== ДЕТСТВО ===== -->
+<section class="childhood">
+    <div class="container">
+        <div class="side-photos">
+            <div class="side-photo left-photo">
+                <div class="photo-frame">
+                    <div class="photo-placeholder"><img src="images/her-child.PNG" alt="Её детство"></div>
+                    <span class="photo-label">Её детство</span>
+                </div>
+            </div>
+            <div class="side-text">
+                <span class="section-subtitle">Детство</span>
+                <h2>Каждый рос в своём мире</h2>
+                <p>Она верила в чудеса, он — в себя. Их пути ещё не пересекались, но судьба уже готовила встречу.</p>
+            </div>
+            <div class="side-photo right-photo">
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="images/his-child.JPG" alt="Его детство">
+                    </div>
+                    <span class="photo-label">Его детство</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ШКОЛА ===== -->
+<section class="growing-up">
+    <div class="container">
+        <div class="side-photos">
+            <div class="side-photo left-photo">
+                <div class="photo-frame">
+                    <div class="photo-placeholder"><img src="images/her-school.JPG" alt="Её школа"></div>
+                    <span class="photo-label">Её школа</span>
+                </div>
+            </div>
+            <div class="side-text">
+                <span class="section-subtitle">Школа</span>
+                <h2>Годы учёбы и мечтаний</h2>
+                <p>Каждый день приближал их к той самой встрече, которая изменит всё. Школьные годы пролетели незаметно.</p>
+            </div>
+            <div class="side-photo right-photo">
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="images/his-school.PNG" alt="Его школа">
+                    </div>
+                    <span class="photo-label">Его школа</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ЮНОШЕСТВО ===== -->
+<section class="youth">
+    <div class="container">
+        <div class="side-photos">
+            <div class="side-photo left-photo">
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="images/her-youth.PNG" alt="Её юность">
+                    </div>
+                    <span class="photo-label">Её юность</span>
+                </div>
+            </div>
+            <div class="side-text">
+                <span class="section-subtitle">Юношество</span>
+                <h2>Мы ещё не знали друг друга...</h2>
+                <p>Каждый жил своей жизнью, строил планы, мечтал о будущем. Где-то рядом, но ещё не вместе. Судьба уже вела нас навстречу друг другу.</p>
+            </div>
+            <div class="side-photo right-photo">
+                <div class="photo-frame">
+                    <div class="photo-placeholder">
+                        <img src="images/his-youth.JPG" alt="Его юность">
+                    </div>
+                    <span class="photo-label">Его юность</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ПЕРВАЯ ВСТРЕЧА ===== -->
+<section class="first-meeting">
+    <div class="container">
+        <div class="single-photo-section">
+            <span class="section-subtitle">Первая встреча</span>
+            <h2>И тогда всё изменилось...</h2>
+            <div class="single-photo-frame">
+                <div class="photo-placeholder"><img src="images/our-meeting2.JPG" alt="Наша первая встреча"></div>
+            </div>
+            <p class="single-photo-text">Иногда судьбе достаточно одной встречи, чтобы изменить две жизни навсегда. В «Билайне» мы пересеклись случайно — но остались навсегда. Тот день стал началом нашей истории.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== В ОТНОШЕНИЯХ ===== -->
+<section class="relationship">
+    <div class="container">
+        <div class="relationship-content">
+            <span class="section-subtitle">Наша история</span>
+            <h2>А потом мы стали друг для друга всем...</h2>
+            
+            <div class="relationship-photos">
+                <div class="rel-photo">
+                    <div class="rel-photo-placeholder">
+                        <img src="images/rs1.JPG" alt="Наши счастливые моменты">
+                    </div>
+                </div>
+                <div class="rel-photo">
+                    <div class="rel-photo-placeholder">
+                        <img src="images/rs2.JPG" alt="Наши счастливые моменты">
+                    </div>
+                </div>
+                <div class="rel-photo">
+                    <div class="rel-photo-placeholder">
+                        <img src="images/rs3.JPG" alt="Наши счастливые моменты">
+                    </div>
+                </div>
+            </div>
+            
+            <p class="relationship-text">
+                Мы начали жить вместе почти сразу — и это было лучшим решением. 
+                Вместе готовили ужины, смотрели фильмы до утра, придумывали 
+                планы на выходные. Много гуляли по городу, катались на машине 
+                и слушали музыку, которая стала «нашей». Часто проводили время 
+                в кругу семьи, где нас всегда ждали с теплом. Эти дни были 
+                наполнены простым, но таким важным счастьем. Мы строили наш 
+                мир, день за днём, даже не замечая, как становимся одной семьёй.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ПРЕДЛОЖЕНИЕ ===== -->
+<section class="proposal-photo">
+    <div class="container">
+        <div class="single-photo-section">
+            <span class="section-subtitle">Любовь</span>
+            <h2>И однажды прозвучало...</h2>
+            <div class="big-word">«Да»</div>
+            <div class="single-photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/proposal.JPG" alt="Момент предложения">
+                </div>
+            </div>
+            <p class="single-photo-text">Самый важный ответ в нашей жизни. Теперь мы идём по этому пути вместе.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WEDDING DAY ===== -->
+<section class="wedding-day">
+    <div class="container">
+        <span class="section-subtitle">SAVE THE DATE</span>
+        <h2>Мы женимся</h2>
+        <div class="date">27 • 08 • 2026</div>
+        <p>Этот день станет особенным только если вы будете рядом.</p>
+        <div class="timer-wrapper">
+            <p>До церемонии осталось</p>
+            <div class="timer" id="timer">
+                <div class="timer-item">
+                    <span class="number" id="days">00</span>
+                    <span class="label">Дней</span>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-item">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">Часов</span>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-item">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Минут</span>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-item">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Секунд</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ЗАГС ===== -->
+<div class="location-card">
+    <div class="location-icon">💒</div>
+    <h3>Церемония бракосочетания</h3>
+    <p class="location-address">📍 Центр семьи Казан</p>
+    <p class="location-address" style="font-size:16px; color:#9b8a7a;">ул. Сибгата Хакима, 4, Казань</p>
+    <p class="location-time">⏰ 12:00</p>
+    <a href="https://yandex.ru/maps/org/tsentr_semyi_kazan/5902021407" target="_blank" class="map-link">
+        <div class="map-image-placeholder">
+            <img src="images/zags.png" alt="Центр семьи Казан">
+            <div class="map-hover-text">📍 Нажать, чтобы открыть карту</div>
+        </div>
+    </a>
+</div>
+
+<!-- ===== БАНКЕТ ===== -->
+<div class="location-card">
+    <div class="location-icon">🍾 </div>
+    <h3>Банкет</h3>
+    <p class="location-address">📍  Банкетный зал «Виктория»</p>
+    <p class="location-address" style="font-size:16px; color:#9b8a7a;">Полковая ул., 6, село Высокая Гора</p>
+    <p class="location-time">⏰ 16:00</p>
+    <a href="https://yandex.ru/maps/org/viktoriya/1722062688" target="_blank" class="map-link">
+        <div class="map-image-placeholder">
+            <img src="images/banquet.png" alt="Банкетный зал Виктория">
+            <div class="map-hover-text">📍  Нажать, чтобы открыть карту</div>
+        </div>
+    </a>
+</div>
+
+<!-- ===== ПОЖЕЛАНИЯ ===== -->
+<section class="gifts">
+    <div class="container">
+        <h2>Пожелания</h2>
+        <p>Ваше присутствие — лучший подарок. Если захотите нас порадовать, мы будем благодарны за ваш вклад в наш совместный бюджет ❤️</p>
+    </div>
+</section>
+
+<!-- ===== RSVP ===== -->
+<section class="rsvp">
+    <div class="container">
+        <h2>Подтвердите присутствие</h2>
+        <p style="color:#7d6c5d; margin-bottom:30px; font-size:18px;">
+            Пожалуйста, выберите вариант, который вам подходит ❤️
+        </p>
+        <form id="rsvpForm">
+            <input type="text" id="name" name="Имя" placeholder="Ваше имя" required>
+            
+            <select id="attendance" name="Статус">
+                <option value="full">Буду и на церемонии, и на банкете ❤️</option>
+                <option value="ceremony">Буду только на церемонии (ЗАГС) 💒</option>
+                <option value="party">Буду только на банкете 🍾</option>
+                <option value="no">К сожалению, не смогу прийти 😔</option>
+            </select>
+            
+            <textarea id="comment" name="Комментарий" placeholder="Комментарий (необязательно)"></textarea>
+            
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <h2>До встречи ❤️</h2>
+    <p>Спасибо, что разделите этот день вместе с нами.</p>
+    <p>И пролистали сделанный нами сайт до конца, а то мы устали его делать🥹</p>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- ==== АУДИО(СКРЫТО) ==== -->
+ <audio id="bgMusic" loop preload="auto">
+    <source src="music/wenmusic.mp3" type="audio/mpeg">
+    Твой браузер не поддерживает аудио
+ </audio>
+
+</body>
+</html>
