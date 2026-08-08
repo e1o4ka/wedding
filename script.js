@@ -21,18 +21,27 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ Конверт найден, жду клика...');
 
     function openEnvelope() {
+        // Открываем конверт
         envelope.classList.toggle('open');
 
-        // ===== ЗАПУСК МУЗЫКИ ПРИ ОТКРЫТИИ КОНВЕРТА =====
+        // ===== ЗАПУСК МУЗЫКИ =====
         const audio = document.getElementById('bgMusic');
         const musicBtn = document.getElementById('musicBtn');
+        
         if (audio) {
-            audio.play().catch(() => {});
-            if (musicBtn) {
-                musicBtn.textContent = '⏸';
-                musicBtn.style.background = '#b99868';
-                musicBtn.style.color = '#fff';
-            }
+            console.log('🎵 Пытаюсь запустить музыку...');
+            audio.play()
+                .then(() => {
+                    console.log('✅ Музыка запущена!');
+                    if (musicBtn) {
+                        musicBtn.textContent = '⏸';
+                        musicBtn.style.background = '#b99868';
+                        musicBtn.style.color = '#fff';
+                    }
+                })
+                .catch(error => {
+                    console.error('❌ Ошибка запуска музыки:', error);
+                });
         }
 
         setTimeout(function() {
