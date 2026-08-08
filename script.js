@@ -23,6 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function openEnvelope() {
         envelope.classList.toggle('open');
 
+        // ===== ЗАПУСК МУЗЫКИ ПРИ ОТКРЫТИИ КОНВЕРТА =====
+        const audio = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        if (audio) {
+            audio.play().catch(() => {});
+            if (musicBtn) {
+                musicBtn.textContent = '⏸';
+                musicBtn.style.background = '#b99868';
+                musicBtn.style.color = '#fff';
+            }
+        }
+
         setTimeout(function() {
             const intro = document.querySelector('.intro');
             if (intro) {
@@ -134,17 +146,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // =========================
-// MUSIC PLAYER (запуск при клике на конверт)
+// MUSIC PLAYER
 // =========================
 
 document.addEventListener('DOMContentLoaded', function() {
     const musicBtn = document.getElementById('musicBtn');
     const audio = document.getElementById('bgMusic');
-    const envelope = document.getElementById('envelope');
     let isPlaying = false;
-    let hasStarted = false;
 
-    if (musicBtn && audio && envelope) {
+    if (musicBtn && audio) {
         // Громкость 30%
         audio.volume = 0.3;
 
@@ -154,24 +164,8 @@ document.addEventListener('DOMContentLoaded', function() {
             audio.play();
         });
 
-        // ===== ЗАПУСК ПРИ КЛИКЕ НА КОНВЕРТ =====
-        envelope.addEventListener('click', function startMusic() {
-            if (!hasStarted) {
-                audio.play().catch(() => {});
-                musicBtn.textContent = '⏸';
-                musicBtn.style.background = '#b99868';
-                musicBtn.style.color = '#fff';
-                isPlaying = true;
-                hasStarted = true;
-                // Убираем слушатель, чтобы не дублировалось
-                envelope.removeEventListener('click', startMusic);
-            }
-        });
-
-        // ===== КНОПКА ДЛЯ УПРАВЛЕНИЯ =====
-        musicBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
+        // Кнопка управления музыкой
+        musicBtn.addEventListener('click', function() {
             if (isPlaying) {
                 audio.pause();
                 musicBtn.textContent = '♫';
@@ -184,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 musicBtn.style.background = '#b99868';
                 musicBtn.style.color = '#fff';
                 isPlaying = true;
-                hasStarted = true;
             }
         });
     }
