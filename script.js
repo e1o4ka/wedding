@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // =========================
-// MUSIC PLAYER
+// MUSIC PLAYER (только управление кнопкой)
 // =========================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             audio.play();
         });
 
-        // Кнопка управления музыкой
+        // ===== КНОПКА ТОЛЬКО ВКЛЮЧАЕТ/ВЫКЛЮЧАЕТ =====
         musicBtn.addEventListener('click', function() {
             if (isPlaying) {
                 audio.pause();
