@@ -1095,3 +1095,59 @@ footer p {
 .single-photo-frame .photo-placeholder img {
     transition: 0.3s;
 }
+/* ============================================
+   ПРИНУДИТЕЛЬНОЕ ОГРАНИЧЕНИЕ ДЛЯ ВСЕХ ФОТО
+============================================ */
+
+/* Все фото внутри любых рамок */
+.photo-placeholder img,
+.single-photo-frame .photo-placeholder img,
+.rel-photo-placeholder img,
+.map-image-placeholder img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+/* Все рамки с фото */
+.photo-placeholder,
+.single-photo-frame .photo-placeholder,
+.rel-photo-placeholder {
+    overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* На телефонах — жёсткий размер */
+@media (max-width: 600px) {
+    .photo-placeholder,
+    .single-photo-frame .photo-placeholder,
+    .rel-photo-placeholder {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 340px !important;
+        margin: 0 auto !important;
+    }
+
+    .photo-placeholder img,
+    .single-photo-frame .photo-placeholder img,
+    .rel-photo-placeholder img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .photo-placeholder,
+    .single-photo-frame .photo-placeholder,
+    .rel-photo-placeholder {
+        width: 100% !important;
+        max-width: 380px !important;
+        height: 400px !important;
+        margin: 0 auto !important;
+    }
+}
