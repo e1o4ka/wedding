@@ -1151,3 +1151,161 @@ footer p {
         margin: 0 auto !important;
     }
 }
+/* ============================================
+   МОБИЛЬНАЯ ВЕРСИЯ (исправленная)
+============================================ */
+@media (max-width: 900px) {
+
+    .side-photos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .side-photos .side-text {
+        order: 1;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .side-photos .left-photo {
+        order: 2;
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .side-photos .right-photo {
+        order: 3;
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .side-photos.reverse .side-text {
+        order: 1;
+    }
+    .side-photos.reverse .left-photo {
+        order: 2;
+    }
+    .side-photos.reverse .right-photo {
+        order: 3;
+    }
+
+    .side-photo .photo-frame {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-photo .photo-placeholder {
+        width: 100%;
+        max-width: 380px;
+        height: 380px; /* ← уменьшил до 380px */
+        border-radius: 20px;
+        background: rgba(248, 244, 238, 0.4);
+        border: 2px dashed #d7c9b8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .side-photo .photo-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* ← заменил contain на cover */
+        display: block;
+        background: transparent;
+    }
+
+    .photo-label {
+        font-size: 14px;
+        margin-top: 6px;
+        letter-spacing: 2px;
+    }
+
+    /* Одиночные фото (Встреча, Предложение) */
+    .single-photo-frame .photo-placeholder {
+        width: 100%;
+        max-width: 380px;
+        height: 380px;
+        margin: 0 auto;
+        border-radius: 24px;
+        background: rgba(248, 244, 238, 0.4);
+        border: 2px dashed #d7c9b8;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .single-photo-frame .photo-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        background: transparent;
+    }
+
+    /* Фото в блоке "В отношениях" */
+    .rel-photo {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .rel-photo-placeholder {
+        width: 100%;
+        height: 380px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px dashed #d7c9b8;
+        background: rgba(248, 244, 238, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rel-photo-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .side-photo .photo-frame {
+        padding: 0 5px;
+    }
+
+    .side-photo .photo-placeholder {
+        max-width: 320px;
+        height: 320px;
+        border-radius: 16px;
+    }
+
+    .single-photo-frame .photo-placeholder {
+        max-width: 320px;
+        height: 320px;
+        border-radius: 16px;
+    }
+
+    .rel-photo {
+        max-width: 320px;
+    }
+
+    .rel-photo-placeholder {
+        height: 320px;
+        border-radius: 16px;
+    }
+
+    .side-photos .left-photo,
+    .side-photos .right-photo {
+        max-width: 320px;
+    }
+}
