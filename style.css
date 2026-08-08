@@ -1152,7 +1152,7 @@ footer p {
     }
 }
 /* ============================================
-   МОБИЛЬНАЯ ВЕРСИЯ (исправленная)
+   МОБИЛЬНАЯ ВЕРСИЯ (ФОТО ЗАПОЛНЯЮТ РАМКУ)
 ============================================ */
 @media (max-width: 900px) {
 
@@ -1204,7 +1204,7 @@ footer p {
     .side-photo .photo-placeholder {
         width: 100%;
         max-width: 380px;
-        height: 380px; /* ← уменьшил до 380px */
+        height: 380px;
         border-radius: 20px;
         background: rgba(248, 244, 238, 0.4);
         border: 2px dashed #d7c9b8;
@@ -1218,7 +1218,7 @@ footer p {
     .side-photo .photo-placeholder img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* ← заменил contain на cover */
+        object-fit: cover;
         display: block;
         background: transparent;
     }
@@ -1229,7 +1229,6 @@ footer p {
         letter-spacing: 2px;
     }
 
-    /* Одиночные фото (Встреча, Предложение) */
     .single-photo-frame .photo-placeholder {
         width: 100%;
         max-width: 380px;
@@ -1252,7 +1251,16 @@ footer p {
         background: transparent;
     }
 
-    /* Фото в блоке "В отношениях" */
+    /* ===== В ОТНОШЕНИЯХ ===== */
+    .relationship-photos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
     .rel-photo {
         width: 100%;
         max-width: 380px;
@@ -1276,6 +1284,35 @@ footer p {
         object-fit: cover;
         display: block;
     }
+
+    /* ===== КАРТЫ ===== */
+    .map-image-placeholder {
+        width: 100%;
+        max-width: 380px;
+        height: 220px;
+        margin: 0 auto;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 2px dashed #d7c9b8;
+        background: #fcfaf8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map-image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .map-hover-text {
+        opacity: 1;
+        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+        padding: 15px 12px 12px;
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1298,14 +1335,3 @@ footer p {
     .rel-photo {
         max-width: 320px;
     }
-
-    .rel-photo-placeholder {
-        height: 320px;
-        border-radius: 16px;
-    }
-
-    .side-photos .left-photo,
-    .side-photos .right-photo {
-        max-width: 320px;
-    }
-}
