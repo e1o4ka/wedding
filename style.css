@@ -1213,3 +1213,86 @@ footer p {
         font-size: 15px;
     }
 }
+/* =============================================
+   МОБИЛЬНАЯ ВЕРСИЯ — ПРИНУДИТЕЛЬНЫЕ СТИЛИ ДЛЯ ФОТО
+   (перебивают всё, что было до этого)
+============================================= */
+
+@media (max-width: 768px) {
+
+    /* БЛОКИ: ДЕТСТВО, ШКОЛА, ЮНОШЕСТВО */
+    .side-photo .photo-placeholder {
+        width: 100% !important;
+        max-width: 380px !important;
+        height: 380px !important;
+        border-radius: 20px !important;
+        background: rgba(248, 244, 238, 0.4) !important;
+        border: 2px dashed #d7c9b8 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: hidden !important;
+        margin: 0 auto !important;
+    }
+
+    .side-photo .photo-placeholder img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;  /* ← ПРИНУДИТЕЛЬНО ОБРЕЗАЕТ */
+        display: block !important;
+    }
+
+    /* БЛОК: ПЕРВАЯ ВСТРЕЧА / ПРЕДЛОЖЕНИЕ */
+    .single-photo-frame .photo-placeholder {
+        width: 100% !important;
+        max-width: 380px !important;
+        height: 380px !important;
+        border-radius: 24px !important;
+        background: rgba(248, 244, 238, 0.4) !important;
+        border: 2px dashed #d7c9b8 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+    }
+
+    .single-photo-frame .photo-placeholder img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;  /* ← ПРИНУДИТЕЛЬНО ОБРЕЗАЕТ */
+        display: block !important;
+    }
+
+    /* БЛОК: В ОТНОШЕНИЯХ */
+    .rel-photo-placeholder {
+        width: 100% !important;
+        max-width: 380px !important;
+        height: 380px !important;
+        border-radius: 20px !important;
+        background: rgba(248, 244, 238, 0.4) !important;
+        border: 2px dashed #d7c9b8 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+    }
+
+    .rel-photo-placeholder img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;  /* ← ПРИНУДИТЕЛЬНО ОБРЕЗАЕТ */
+        display: block !important;
+    }
+}
+
+/* ===== ДЛЯ САМЫХ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 500px) ===== */
+@media (max-width: 500px) {
+    .side-photo .photo-placeholder,
+    .single-photo-frame .photo-placeholder,
+    .rel-photo-placeholder {
+        max-width: 320px !important;
+        height: 320px !important;
+    }
+}
