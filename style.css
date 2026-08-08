@@ -1279,3 +1279,63 @@ footer p {
         padding: 0 10px;
     }
 }
+/* ============================================
+   ЕДИНЫЙ РАЗМЕР ТЕКСТА НА ТЕЛЕФОНЕ
+============================================ */
+@media (max-width: 768px) {
+    /* Intro (Наша история) */
+    .intro p {
+        font-size: 20px;
+        padding: 0 10px;
+    }
+    .intro h2 {
+        font-size: 32px;
+    }
+
+    /* Детство, Школа, Юношество */
+    .side-text p {
+        font-size: 20px !important;
+        padding: 0 5px;
+    }
+    .side-text h2 {
+        font-size: 32px !important;
+    }
+
+    /* Первая встреча + Предложение */
+    .single-photo-text {
+        font-size: 20px !important;
+        padding: 0 10px;
+    }
+    .single-photo-section h2 {
+        font-size: 32px !important;
+    }
+    .single-photo-section .big-word {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 500px) {
+    .intro p {
+        font-size: 18px;
+    }
+    .intro h2 {
+        font-size: 26px;
+    }
+
+    .side-text p {
+        font-size: 18px !important;
+    }
+    .side-text h2 {
+        font-size: 26px !important;
+    }
+
+    .single-photo-text {
+        font-size: 18px !important;
+    }
+    .single-photo-section h2 {
+        font-size: 26px !important;
+    }
+    .single-photo-section .big-word {
+        font-size: 50px;
+    }
+}
