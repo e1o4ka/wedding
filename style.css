@@ -1095,3 +1095,119 @@ footer p {
 .single-photo-frame .photo-placeholder img {
     transition: 0.3s;
 }
+/* ============================================
+   БЛОК "В ОТНОШЕНИЯХ" (стили с нуля)
+============================================ */
+
+.relationship {
+    background: transparent;
+    text-align: center;
+}
+
+.relationship-content .section-subtitle {
+    display: block;
+    margin-bottom: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #b99868;
+    font-size: 13px;
+}
+
+.relationship-content h2 {
+    font-size: 44px;
+    margin-bottom: 40px;
+}
+
+.relationship-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 950px;
+    margin: 0 auto 35px;
+}
+
+.rel-photo {
+    width: 100%;
+}
+
+.rel-photo-placeholder {
+    width: 100%;
+    height: 340px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px dashed #d7c9b8;
+    background: rgba(248, 244, 238, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.rel-photo-placeholder:hover {
+    border-color: #b99868;
+}
+
+.rel-photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.relationship-text {
+    max-width: 700px;
+    margin: 10px auto 0;
+    font-size: 20px;
+    color: #7d6c5d;
+    line-height: 1.8;
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width: 900px) {
+    .relationship-photos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .rel-photo {
+        max-width: 380px;
+    }
+
+    .rel-photo-placeholder {
+        height: 380px;
+        max-width: 380px;
+        border-radius: 20px;
+    }
+
+    .relationship-content h2 {
+        font-size: 32px;
+    }
+
+    .relationship-text {
+        font-size: 17px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .rel-photo {
+        max-width: 320px;
+    }
+
+    .rel-photo-placeholder {
+        height: 320px;
+        max-width: 320px;
+        border-radius: 16px;
+    }
+
+    .relationship-content h2 {
+        font-size: 26px;
+    }
+
+    .relationship-text {
+        font-size: 15px;
+    }
+}
