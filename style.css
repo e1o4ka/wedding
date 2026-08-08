@@ -3,17 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-\
-html, body {
-    touch-action: pan-y pinch-zoom;
-}
-
-/* Запрещаем зум на телефонах */
-@media (max-width: 768px) {
-    html, body {
-        touch-action: pan-y;
-    }
-}
 
 html {
     scroll-behavior: smooth;
