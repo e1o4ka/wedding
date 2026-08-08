@@ -133,21 +133,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// =========================// MUSIC PLAYER// =========================
+// =========================
+// MUSIC PLAYER (автозапуск при открытии конверта)
+// =========================
 
 document.addEventListener('DOMContentLoaded', function() {
     const musicBtn = document.getElementById('musicBtn');
     const audio = document.getElementById('bgMusic');
+    const envelope = document.getElementById('envelope');
     let isPlaying = false;
+    let hasStarted = false; // чтобы музыка запускалась только 1 раз
 
     if (musicBtn && audio) {
+        // Устанавливаем громкость 30%
         audio.volume = 0.3;
+
         // Бесконечное повторение
         audio.addEventListener('ended', function() {
             audio.currentTime = 0;
             audio.play();
         });
 
+        // ===== АВТОЗАПУСК ПРИ ОТКРЫТИИ КОНВЕРТА =====
+        if (envelope) {
+            const observer = new MutationObserver(function() {
+                if (envelope.classList.contains('open') && !hasStarted) {
+                    audio.play().catch(() => {});
+                    musicBtn.textContent = '⏸';
+                    musicBtn.style.background = '#b99868';
+                    musicBtn.style.color = '#fff';
+                    isPlaying = true;
+                    hasStarted = true;
+                }
+            });
+            observer.observe(envelope, { attributes: true, attributeFilter: ['class'] });
+        }
+
+        // ===== КНОПКА ДЛЯ УПРАВЛЕНИЯ =====
         musicBtn.addEventListener('click', function() {
             if (isPlaying) {
                 audio.pause();
@@ -156,13 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 musicBtn.style.color = '#5B4C40';
                 isPlaying = false;
             } else {
-                audio.play().catch(() => {
-                    // Если автоплей заблокирован — ничего страшного
-                });
+                audio.play().catch(() => {});
                 musicBtn.textContent = '⏸';
                 musicBtn.style.background = '#b99868';
                 musicBtn.style.color = '#fff';
                 isPlaying = true;
+                hasStarted = true;
             }
         });
     }
